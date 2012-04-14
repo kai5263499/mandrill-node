@@ -50,7 +50,7 @@ If you don't have npm installed or don't want to use it:
 
 ##Contributions
 
-The Mandrill node.js module is designed to be as static as Javascript allows, following a functional or lambda programming paradigm. If you want to learn more about this pattern of development and why this pattern was chosen above other, more traditional, PHP library approaches please read the following excellent blog post http://blog.lcf.name/2011/12/functional-programming-in-php.html
+The Mandrill node.js module is designed to be as static as Javascript allows, following a functional or lambda programming paradigm. If you want to learn more about this pattern of development and why this pattern was chosen above other, more traditional, javascript approaches please read the following excellent article http://howtonode.org/why-use-closure
 
 If you would like to help maintain this project and/or if you have any questions or comments about the library's design or implementation I'd love to hear from you.
 
