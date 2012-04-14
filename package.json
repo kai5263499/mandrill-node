@@ -1,12 +1,12 @@
 {
-    "name" : "mandrill-node",
+    "name" : "mandrill",
     "version" : "0.1.0",
     "description" : "A node.js wrapper for MailChimp's Mandrill API.",
     "author" : "Wes Widner <wes@werxltd.com>",
     "main" : "mandrill.js",
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/kai5263499/node-mandrill.git"
+        "url" : "http://github.com/kai5263499/mandrill-node.git"
     },
     "engines": {
         "node": ">= 0.6.10"

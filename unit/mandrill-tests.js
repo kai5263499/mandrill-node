@@ -2,7 +2,7 @@ var mandrill = require('../mandrill'),
     util     = require('util'),
     fs       = require('fs');
 
-mandrill.call(JSON.parse(fs.readFileSync('configure.json', 'utf8')));
+mandrill.call(JSON.parse(fs.readFileSync(__dirname + '/../' + 'configure.json', 'utf8')));
 
 exports.testMandrillApiCalls = function(test) {
     mandrill.call('get_api_calls', function(data) {
