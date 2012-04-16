@@ -14,8 +14,8 @@ If you don't have npm installed or don't want to use it:
     git clone git://github.com/kai5263499/mandrill-node.git mandrill
 
 ```javascript
-    //Include the mandrill module
-    var mandrill = require('mandrill');
+//Include the mandrill module
+var mandrill = require('mandrill');
 ```
 
 ##Requirements
@@ -28,24 +28,24 @@ If you don't have npm installed or don't want to use it:
 ##Examples
 
 ```javascript
-    // The key can be set either by passing the a an object which only
-    // contains the key, ex.
-    mandrill.call({'key':'mykey'});
+// The key can be set either by passing the a an object which only
+// contains the key, ex.
+mandrill.call({'key':'mykey'});
 
-    /**
-     * They key could also be set with the request event. All request events
-     * need to have at least a type and a call property set and these values
-     * need to correspond to the valid types and calls recognized by the Mandrill
-     * service.
-     *
-     * Here is an example of a call to Mandrill API's users.info
-     * The docs for this call can be found at http://mandrillapp.com/api/docs/users.html#method=info
-     */
-    mandrill.call({'type':'users','call':'info'}, function(data){
-        console.log(data);
-    });
-    
-    // For a list of valid calls please visit http://mandrillapp.com/api/docs/index.html
+/**
+ * They key could also be set with the request event. All request events
+ * need to have at least a type and a call property set and these values
+ * need to correspond to the valid types and calls recognized by the Mandrill
+ * service.
+ *
+ * Here is an example of a call to Mandrill API's users.info
+ * The docs for this call can be found at http://mandrillapp.com/api/docs/users.html#method=info
+ */
+mandrill.call({'type':'users','call':'info'}, function(data){
+    console.log(data);
+});
+
+// For a list of valid calls please visit http://mandrillapp.com/api/docs/index.html
 ```
 
 ##Contributions
