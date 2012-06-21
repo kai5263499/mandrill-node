@@ -75,7 +75,7 @@ exports.call = (function() {
         
         if(!_api_calls[type][call]) throw "Invalid call";
         
-        if(_.without(opts,_api_calls[type][call]).length > 0) throw "Invalid options passed";
+        if(_.difference(_.keys(opts),_api_calls[type][call]).length > 0) throw "Invalid options passed";
     }
     
     var _callMandrillApi = function(type, call, opts, cb) {
