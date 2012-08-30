@@ -56,4 +56,4 @@ If you would like to help maintain this project and/or if you have any questions
 
 ##Unit Tests
 
-A unit test using nodeunit for the Mandrill module is avaliable in the 'unit' directory. You will need to copy the configure.json.example to configure.json and change the Mandrill API key from 'mykey' to your Mandrill API key in order for the tests to complete. If you want to contribute any bugfixes or examples please add a unit test for your code and make sure nothing else breaks.
+A unit test using [nodeunit](https://github.com/caolan/nodeunit "nodeunit project page") for the Mandrill module is avaliable in the 'unit' directory. You will need to copy the configure.json.example to configure.json and change the Mandrill API key from 'mykey' to your Mandrill API key in order for the tests to complete. If you want to contribute any bugfixes or examples please add a unit test for your code and make sure nothing else breaks.
