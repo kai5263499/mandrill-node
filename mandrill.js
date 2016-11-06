@@ -83,9 +83,6 @@ exports.call = (function() {
         var parsed_url = util.format(_mandrill_api_url, type, call);
         var opts_str = JSON.stringify(opts);
         
-        console.log(parsed_url,'parsed_url');
-        console.log(opts_str,'opts_str');
-        
         request({
             method:'POST',
             uri:parsed_url,
