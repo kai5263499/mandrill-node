@@ -2,7 +2,7 @@
 
 mandrill-node is a node.js module for interfacing with MailChimp's Mandrill API
 
-##Installation
+## Installation
 
 Installing using npm (node package manager):
 
@@ -18,14 +18,14 @@ If you don't have npm installed or don't want to use it:
 var mandrill = require('mandrill');
 ```
 
-##Requirements
+## Requirements
 
 * A MailChimp account, Mandrill service enabled, Mandrill API key. See the Getting Started guide for more information http://help.mandrill.com/customer/portal/topics/214457-getting-started/articles
 * node.js 0.6.10+
 * request 2.9.100+
 * underscore 1.3.3+
 
-##Examples
+## Examples
 
 ```javascript
 // The key can be set either by passing the a an object which only
@@ -48,12 +48,12 @@ mandrill.call({'type':'users','call':'info'}, function(data){
 // For a list of valid calls please visit http://mandrillapp.com/api/docs/index.html
 ```
 
-##Contributions
+## Contributions
 
 The Mandrill node.js module is designed to be as static as Javascript allows, following a functional or lambda programming paradigm. If you want to learn more about this pattern of development and why this pattern was chosen above other, more traditional, javascript approaches please read the following excellent article http://howtonode.org/why-use-closure
 
 If you would like to help maintain this project and/or if you have any questions or comments about the library's design or implementation I'd love to hear from you.
 
-##Unit Tests
+## Unit Tests
 
 A unit test using [nodeunit](https://github.com/caolan/nodeunit "nodeunit project page") for the Mandrill module is avaliable in the 'unit' directory. You will need to copy the configure.json.example to configure.json and change the Mandrill API key from 'mykey' to your Mandrill API key in order for the tests to complete. If you want to contribute any bugfixes or examples please add a unit test for your code and make sure nothing else breaks.
