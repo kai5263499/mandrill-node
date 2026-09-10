@@ -1,6 +1,5 @@
 exports.call = (function() {
     var request = require('request'),
-        _       = require('underscore');
         util    = require('util');
     
     var _mandrill_api_url = 'https://mandrillapp.com/api/1.0/%s/%s.json';
@@ -15,55 +14,55 @@ exports.call = (function() {
                 'info'             : _key,
                 'ping'             : _key,
                 'senders'          : _key,
-                'disable-sender'   : _.union(_key, ['domain']),
-                'verify-sender'    : _.union(_key, ['email'])
+                'disable-sender'   : _key.concat(['domain']),
+                'verify-sender'    : _key.concat(['email'])
             },
             
             /* Messages Calls */
             'messages':{
-                'send'             : _.union(_key, ['message']),
-                'send-template'    : _.union(_key, ['template_name','template_content','message']),
-                'search'           : _.union(_key, ['query','date_from','date_to','tags','senders','limit'])
+                'send'             : _key.concat(['message']),
+                'send-template'    : _key.concat(['template_name','template_content','message']),
+                'search'           : _key.concat(['query','date_from','date_to','tags','senders','limit'])
             },
             
             /* Tags Calls */
             'tags':{
                 'list'             : _key,
-                'info'             : _.union(_key, ['tag']),
-                'time-series'      : _.union(_key, ['tag']),
+                'info'             : _key.concat(['tag']),
+                'time-series'      : _key.concat(['tag']),
                 'all-time-series'  : _key
             },
             
             /* Senders Calls */
             'senders':{
                 'list'             : _key,
-                'info'             : _.union(_key, ['address']),
-                'time-series'      : _.union(_key, ['address'])
+                'info'             : _key.concat(['address']),
+                'time-series'      : _key.concat(['address'])
             },
             
             /* Urls Calls */
             'urls':{
                 'list'             : _key,
-                'search'           : _.union(_key, ['q']),
-                'time-series'      : _.union(_key, ['url'])
+                'search'           : _key.concat(['q']),
+                'time-series'      : _key.concat(['url'])
             },
             
             /* Templates Calls */
             'templates':{
-                'add'              : _.union(_key, ['name','code']),
-                'info'             : _.union(_key, ['name']),
-                'update'           : _.union(_key, ['name','code']),
-                'delete'           : _.union(_key, ['name']),
+                'add'              : _key.concat(['name','code']),
+                'info'             : _key.concat(['name']),
+                'update'           : _key.concat(['name','code']),
+                'delete'           : _key.concat(['name']),
                 'list'             : _key
             },
             
             /* Webhooks Calls */
             'webhooks':{
                 'list'             : _key,
-                'add'              : _.union(_key, ['url','events']),
-                'info'             : _.union(_key, ['id']),
-                'update'           : _.union(_key, ['id','url','events']),
-                'delete'           : _.union(_key, ['id'])
+                'add'              : _key.concat(['url','events']),
+                'info'             : _key.concat(['id']),
+                'update'           : _key.concat(['id','url','events']),
+                'delete'           : _key.concat(['id'])
             }
         };
     
@@ -75,7 +74,10 @@ exports.call = (function() {
         
         if(!_api_calls[type][call]) throw "Invalid call";
         
-        if(_.difference(_.keys(opts),_api_calls[type][call]).length > 0) throw "Invalid options passed";
+        var allowed = _api_calls[type][call];
+        if(Object.keys(opts).some(function(key) {
+            return allowed.indexOf(key) === -1;
+        })) throw "Invalid options passed";
     }
     
     var _callMandrillApi = function(type, call, opts, cb) {
